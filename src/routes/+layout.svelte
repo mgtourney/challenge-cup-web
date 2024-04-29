@@ -2,15 +2,17 @@
     import "../app.css";
 </script>
 
-<div class="flex flex-col justify-center items-center bg-purple gap-[12px] overflow-hidden h-screen">
+<div class="bg-purple h-screen">
     <!-- Title Bar -->
-    <div class="flex flex-row justify-center items-center w-full h-[16vh] bg-darkPurple">
-        <img src="/titlebar_logo.png" alt="Logo" class="w-[289px] h-[15vh]"/>
+    <div class="fixed top-0 w-full h-[16%] bg-darkPurple">
+        <div class="flex flex-row justify-center items-center">
+            <img src="/titlebar_logo.png" alt="Logo" class="w-[289px] h-[15vh]"/>
+        </div>
     </div>
 
     <!-- Nav Bar -->
-    <div class="px-24 w-full">
-        <div class="grid grid-cols-3 w-full border-4 border-darkPurple text-white text-lg font-bold">
+    <div class="fixed top-[18%] w-full px-4 h-[6%]">
+        <div class="grid grid-cols-3 w-full h-full border-4 border-darkPurple text-white text-lg font-bold items-center">
             <!-- Main Page -->
             <div class="flex itmes-center justify-center">
                 <a href="/">Main Page</a>
@@ -27,7 +29,7 @@
     </div>
 
     <!-- Body -->
-    <div class="h-[78vh] overflow-clip">
+    <div class="fixed top-[22.5%] overflow-clip">
         <slot />
     </div>
 </div>

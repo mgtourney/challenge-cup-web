@@ -7,7 +7,7 @@
         </div>
     </div>
     <!-- Body -->
-    <div class="col-span-2 flex flex-col justify-center items-center text-center h-[70vh] overflow-auto">
+    <div class="col-span-2 flex flex-col justify-center items-center text-center h-[70%] overflow-auto pb-2">
         <!-- super cursed -->
         <div class="h-[130px] pt-[170px] drop-shadow">
             <img src="/body_logo.png" alt="BSCC Logo" class=""/>
