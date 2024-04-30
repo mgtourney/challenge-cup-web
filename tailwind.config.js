@@ -8,6 +8,9 @@ export default {
         'purple': '#2f1c3d',
         'white': '#D4D0DB'
       },
+      fontFamily: {
+        'kumbh': 'Kumbh Sans',
+      }
     },
   },
   plugins: [],
