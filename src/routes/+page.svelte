@@ -1,6 +1,6 @@
 <!-- Logo -->
 <div class="my-[128px] ms-16 flex flex-row items-center justify-center">
-	<div class="flex items-end me-12">
+	<div class="me-12 flex items-end">
 		<img src="/logo.png" alt="BSCC Logo" class="h-[350px]" />
 	</div>
 	<div class="flex flex-col">
@@ -76,7 +76,7 @@
 		</div>
 	</div>
 	<div class="my-[128px]">
-		<div class="flex flex-row gap-8">
+		<div class="flex flex-row gap-6">
 			<h1 class="text-5xl font-bold">Staff Team</h1>
 			<img src="Staff_Icon.png" alt="Staff Icon" class="h-[48px]" />
 		</div>

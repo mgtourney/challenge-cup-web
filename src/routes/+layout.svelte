@@ -2,7 +2,7 @@
 	import '../app.css';
 </script>
 
-<div class="size-fit flex-col bg-grey font-kumbh">
+<div class="flex-col bg-grey font-kumbh">
 	<!-- Navbar -->
 	<div class="flex w-full flex-row bg-light-grey">
 		<div class="flex justify-start py-4 ps-8">
@@ -32,7 +32,7 @@
 	</div>
 	<slot />
 	<!-- Footer -->
-	<div class="grid h-full w-full flex-grow grid-cols-5 items-center bg-light-grey py-8">
+	<div class="grid h-full w-full flex-grow grid-cols-5 items-center bg-light-grey py-8 pe-4">
 		<div class="mx-16 text-start text-2xl">
 			<img src="/logo_and_text.png" alt="BSCC Logo" class="h-[75px]" />
 			<p class="ms-4">© Copyright 2024</p>
