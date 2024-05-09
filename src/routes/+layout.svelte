@@ -1,22 +1,66 @@
 <script lang="ts">
 	import '../app.css';
+	import { Pages } from '$lib';
+
+	let page = Pages.Home;
 </script>
 
-<div class="flex-col bg-grey font-kumbh">
+<div class="flex-col bg-grey font-kallisto">
 	<!-- Navbar -->
 	<div class="flex w-full flex-row bg-light-grey">
-		<div class="flex justify-start py-4 ps-8">
+		<div class="flex justify-start py-8 ps-8">
 			<img src="/logo_and_text.png" alt="BSCC Logo" class="h-[75px]" />
 		</div>
 
+		<div class="flex-grow"></div>
+
 		<div
-			class="flex flex-grow flex-row items-center justify-end gap-4 py-4 pe-8 text-center text-2xl font-semibold"
+			class="grid grid-cols-5 items-center justify-end py-4 pe-8 text-center text-2xl font-semibold"
 		>
-			<p>Home</p>
-			<p>Rules</p>
-			<p>Teams</p>
-			<p>Staff</p>
-			<p>Map Pools</p>
+			{#if page == Pages.Home}
+				<div class="grid grid-rows-2 pt-8">
+					<p class="font-bold">Home</p>
+					<div class="ms-[25%] h-0 w-[50%] rounded-full border-2 border-purple bg-purple"></div>
+				</div>
+			{:else}
+				<button type="button" on:click={() => (page = Pages.Home)}>Home</button>
+			{/if}
+
+			{#if page == Pages.Rules}
+				<div class="grid grid-rows-2 pt-8">
+					<p class="font-bold">Rules</p>
+					<div class="ms-[25%] h-0 w-[50%] rounded-full border-2 border-purple bg-purple"></div>
+				</div>
+			{:else}
+				<button type="button" on:click={() => (page = Pages.Rules)}>Rules</button>
+			{/if}
+
+			{#if page == Pages.Teams}
+				<div class="grid grid-rows-2 pt-8">
+					<p class="font-bold">Teams</p>
+					<div class="ms-[25%] h-0 w-[50%] rounded-full border-2 border-purple bg-purple"></div>
+				</div>
+			{:else}
+				<button type="button" on:click={() => (page = Pages.Teams)}>Teams</button>
+			{/if}
+
+			{#if page == Pages.Staff}
+				<div class="grid grid-rows-2 pt-8">
+					<p class="font-bold">Staff</p>
+					<div class="ms-[25%] h-0 w-[50%] rounded-full border-2 border-purple bg-purple"></div>
+				</div>
+			{:else}
+				<button type="button" on:click={() => (page = Pages.Staff)}>Staff</button>
+			{/if}
+
+			{#if page == Pages.MapPools}
+				<div class="grid grid-rows-2 pt-8">
+					<p class="font-bold">Map Pools</p>
+					<div class="ms-[25%] h-0 w-[50%] rounded-full border-2 border-purple bg-purple"></div>
+				</div>
+			{:else}
+				<button type="button" on:click={() => (page = Pages.MapPools)}>Map Pools</button>
+			{/if}
 		</div>
 
 		<div class="flex items-center justify-end py-4 pe-8">

@@ -10,7 +10,7 @@ export default {
 				red: '#970004'
 			},
 			fontFamily: {
-				kumbh: 'Kumbh Sans'
+				kallisto: 'kallisto'
 			}
 		}
 	},
