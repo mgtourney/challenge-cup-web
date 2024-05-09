@@ -4,9 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'darkPurple': '#2A1739',
-        'purple': '#2f1c3d',
-        'white': '#D4D0DB'
+        'light-grey': '#585858',
+        'grey': '#393838',
+        'purple': '#7a1c91',
+        'red': '#970004'
       },
       fontFamily: {
         'kumbh': 'Kumbh Sans',
