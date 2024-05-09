@@ -1,6 +1,6 @@
 <!-- Logo -->
 <div class="my-[128px] ms-16 flex flex-row items-center justify-center">
-	<div class="flex items-end">
+	<div class="flex items-end me-12">
 		<img src="/logo.png" alt="BSCC Logo" class="h-[350px]" />
 	</div>
 	<div class="flex flex-col">
