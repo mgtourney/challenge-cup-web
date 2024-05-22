@@ -7,6 +7,7 @@
 		<p class="text-7xl">Welcome to</p>
 		<p class="text-8xl font-bold">Challenge Cup</p>
 		<button class="mt-4 size-fit rounded-full bg-purple px-8 py-4 text-start text-3xl"
+			on:click={() => window.open('https://discord.gg/vyTc6TVr66', '_blank')}
 			>Join our Discord</button
 		>
 	</div>
