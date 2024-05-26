@@ -1,8 +1,18 @@
 <script lang="ts">
 	import '../app.css';
 	import { Pages } from '$lib';
+	import { goto } from '$app/navigation';
 
-	let page = Pages.Home;
+	let current_page = Pages.Home;
+
+	$: {
+		console.log(current_page)
+	}
+
+	function redirect(page: Pages) {
+		current_page = page;
+		goto(page);
+	}
 </script>
 
 <div class="flex-col bg-grey font-kallisto">
@@ -17,49 +27,49 @@
 		<div
 			class="grid grid-cols-5 items-center justify-end py-4 pe-8 text-center text-2xl font-semibold"
 		>
-			{#if page == Pages.Home}
+			{#if current_page == Pages.Home}
 				<div class="grid grid-rows-2 pt-8">
 					<p class="font-bold">Home</p>
 					<div class="ms-[25%] h-0 w-[50%] rounded-full border-2 border-purple bg-purple"></div>
 				</div>
 			{:else}
-				<button type="button" on:click={() => (page = Pages.Home)}>Home</button>
+				<button type="button" on:click={() => redirect(Pages.Home)}>Home</button>
 			{/if}
 
-			{#if page == Pages.Rules}
+			{#if current_page == Pages.Rules}
 				<div class="grid grid-rows-2 pt-8">
 					<p class="font-bold">Rules</p>
 					<div class="ms-[25%] h-0 w-[50%] rounded-full border-2 border-purple bg-purple"></div>
 				</div>
 			{:else}
-				<button type="button" on:click={() => (page = Pages.Rules)}>Rules</button>
+				<button type="button" on:click={() => redirect(Pages.Rules)}>Rules</button>
 			{/if}
 
-			{#if page == Pages.Teams}
+			{#if current_page == Pages.Teams}
 				<div class="grid grid-rows-2 pt-8">
 					<p class="font-bold">Teams</p>
 					<div class="ms-[25%] h-0 w-[50%] rounded-full border-2 border-purple bg-purple"></div>
 				</div>
 			{:else}
-				<button type="button" on:click={() => (page = Pages.Teams)}>Teams</button>
+				<button type="button" on:click={() => redirect(Pages.Teams)}>Teams</button>
 			{/if}
 
-			{#if page == Pages.Staff}
+			{#if current_page == Pages.Staff}
 				<div class="grid grid-rows-2 pt-8">
 					<p class="font-bold">Staff</p>
 					<div class="ms-[25%] h-0 w-[50%] rounded-full border-2 border-purple bg-purple"></div>
 				</div>
 			{:else}
-				<button type="button" on:click={() => (page = Pages.Staff)}>Staff</button>
+				<button type="button" on:click={() => redirect(Pages.Staff)}>Staff</button>
 			{/if}
 
-			{#if page == Pages.MapPools}
+			{#if current_page == Pages.MapPools}
 				<div class="grid grid-rows-2 pt-8">
 					<p class="font-bold">Map Pools</p>
 					<div class="ms-[25%] h-0 w-[50%] rounded-full border-2 border-purple bg-purple"></div>
 				</div>
 			{:else}
-				<button type="button" on:click={() => (page = Pages.MapPools)}>Map Pools</button>
+				<button type="button" on:click={() => redirect(Pages.MapPools)}>Map Pools</button>
 			{/if}
 		</div>
 
