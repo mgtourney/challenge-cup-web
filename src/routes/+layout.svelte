@@ -2,17 +2,37 @@
 	import '../app.css';
 	import { Pages } from '$lib';
 	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
 
 	let current_page = Pages.Home;
 
-	$: {
-		console.log(current_page)
-	}
 
 	function redirect(page: Pages) {
 		current_page = page;
 		goto(page);
 	}
+
+	onMount(() => {
+		let page = window.location.pathname;
+		console.log(page);
+		switch (page) {
+			case '/':
+				current_page = Pages.Home;
+				break;
+			case '/rules':
+				current_page = Pages.Rules;
+				break;
+			case '/teams':
+				current_page = Pages.Teams;
+				break;
+			case '/staff':
+				current_page = Pages.Staff;
+				break;
+			case '/mappools':
+				current_page = Pages.MapPools;
+				break;
+		}
+	})
 </script>
 
 <div class="flex-col bg-grey font-kallisto">
