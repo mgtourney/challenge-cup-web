@@ -4,8 +4,12 @@ import postgres from 'postgres';
 
 import '../../drizzle/meta/_journal.json';
 
-const migrationClient = postgres(process.env.POSTGRES_URL!, { max: 1});
-migrate(drizzle(migrationClient), { migrationsFolder: './src/drizzle' });
+try {
+    const migrationClient = postgres(process.env.POSTGRES_URL!, { max: 1});
+    migrate(drizzle(migrationClient), { migrationsFolder: './src/drizzle' });
+} catch (e) {
+    console.error(e);
+}
 
 const queryClient = postgres(process.env.POSTGRES_URL!);
 
