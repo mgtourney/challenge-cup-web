@@ -9,7 +9,7 @@
 		)
 	];
 
-    let callback = "https://discord.com/oauth2/authorize?response_type=token&client_id=1248556424582270986&state=15773059ghq9183habn&redirect_uri=http%3A%2F%2Flocalhost%3A5173%2Fdiscord%2Fcallback&scope=identify"
+    let callback = "https://discord.com/oauth2/authorize?response_type=token&client_id=1248556424582270986&state=15773059ghq9183habn&redirect_uri=https%3A%2F%2Fbschallengecup.xyz%2Fdiscord%2Fcallback&scope=identify"
 </script>
 
 <div class="mx-48 flex flex-col">
