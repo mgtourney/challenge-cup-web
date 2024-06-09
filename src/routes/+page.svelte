@@ -1,3 +1,6 @@
+<script>
+	import { Pages, redirect } from "$lib";
+</script>
 <!-- Logo -->
 <div class="my-[128px] ms-16 flex flex-row items-center justify-center">
 	<div class="me-12 flex items-end">
@@ -57,10 +60,10 @@
 			smoother matches.
 		</div>
 		<div class="flex flex-row items-center gap-4">
-			<button class="mt-4 size-fit rounded-full bg-purple px-8 py-4 text-start text-2xl"
+			<button class="mt-4 size-fit rounded-full bg-purple px-8 py-4 text-start text-2xl" on:click={() => redirect(Pages.Rules)}
 				>Read the rules</button
 			>
-			<p class="mt-4 text-2xl font-semibold">(Coming soon)</p>
+			<!-- <p class="mt-4 text-2xl font-semibold">(Coming soon)</p> -->
 		</div>
 	</div>
 	<div class="my-[128px]">
@@ -70,10 +73,10 @@
 		</div>
 		<div class="mt-8 text-2xl">View the teams and players participating in this tournament.</div>
 		<div class="flex flex-row items-center gap-4">
-			<button class="mt-4 size-fit rounded-full bg-purple px-8 py-4 text-start text-2xl"
+			<button class="mt-4 size-fit rounded-full bg-purple px-8 py-4 text-start text-2xl" on:click={() => redirect(Pages.Teams)}
 				>View teams</button
 			>
-			<p class="mt-4 text-2xl font-semibold">(Coming soon)</p>
+			<!-- <p class="mt-4 text-2xl font-semibold">(Coming soon)</p> -->
 		</div>
 	</div>
 	<div class="my-[128px]">
@@ -83,10 +86,10 @@
 		</div>
 		<div class="mt-8 text-2xl">View the people making this tournament be possible.</div>
 		<div class="flex flex-row items-center gap-4">
-			<button class="mt-4 size-fit rounded-full bg-purple px-8 py-4 text-start text-2xl"
+			<button class="mt-4 size-fit rounded-full bg-purple px-8 py-4 text-start text-2xl" on:click={() => redirect(Pages.Staff)}
 				>View staff</button
 			>
-			<p class="mt-4 text-2xl font-semibold">(Coming soon)</p>
+			<!-- <p class="mt-4 text-2xl font-semibold">(Coming soon)</p> -->
 		</div>
 	</div>
 	<div class="my-[128px]">
@@ -96,10 +99,10 @@
 		</div>
 		<div class="mt-8 text-2xl">View the map pools being played during this tournament.</div>
 		<div class="flex flex-row items-center gap-4">
-			<button class="mt-4 size-fit rounded-full bg-purple px-8 py-4 text-start text-2xl"
+			<button class="mt-4 size-fit rounded-full bg-purple px-8 py-4 text-start text-2xl" on:click={() => redirect(Pages.MapPools)}
 				>View pools</button
 			>
-			<p class="mt-4 text-2xl font-semibold">(Coming soon)</p>
+			<!-- <p class="mt-4 text-2xl font-semibold">(Coming soon)</p> -->
 		</div>
 	</div>
 </div>

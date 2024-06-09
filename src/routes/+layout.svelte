@@ -3,12 +3,10 @@
 	import { Pages } from '$lib';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-
-	let current_page = Pages.Home;
-
+	import { currentPage } from '$lib';
 
 	function redirect(page: Pages) {
-		current_page = page;
+		$currentPage = page;
 		goto(page);
 	}
 
@@ -17,22 +15,22 @@
 		console.log(page);
 		switch (page) {
 			case '/':
-				current_page = Pages.Home;
+				$currentPage = Pages.Home;
 				break;
 			case '/rules':
-				current_page = Pages.Rules;
+				$currentPage = Pages.Rules;
 				break;
 			case '/teams':
-				current_page = Pages.Teams;
+				$currentPage = Pages.Teams;
 				break;
 			case '/staff':
-				current_page = Pages.Staff;
+				$currentPage = Pages.Staff;
 				break;
 			case '/mappools':
-				current_page = Pages.MapPools;
+				$currentPage = Pages.MapPools;
 				break;
 		}
-	})
+	});
 </script>
 
 <div class="flex-col bg-grey font-kallisto">
@@ -47,7 +45,7 @@
 		<div
 			class="grid grid-cols-5 items-center justify-end py-4 pe-8 text-center text-2xl font-semibold"
 		>
-			{#if current_page == Pages.Home}
+			{#if $currentPage == Pages.Home}
 				<div class="grid grid-rows-2 pt-8">
 					<p class="font-bold">Home</p>
 					<div class="ms-[25%] h-0 w-[50%] rounded-full border-2 border-purple bg-purple"></div>
@@ -56,7 +54,7 @@
 				<button type="button" on:click={() => redirect(Pages.Home)}>Home</button>
 			{/if}
 
-			{#if current_page == Pages.Rules}
+			{#if $currentPage == Pages.Rules}
 				<div class="grid grid-rows-2 pt-8">
 					<p class="font-bold">Rules</p>
 					<div class="ms-[25%] h-0 w-[50%] rounded-full border-2 border-purple bg-purple"></div>
@@ -65,7 +63,7 @@
 				<button type="button" on:click={() => redirect(Pages.Rules)}>Rules</button>
 			{/if}
 
-			{#if current_page == Pages.Teams}
+			{#if $currentPage == Pages.Teams}
 				<div class="grid grid-rows-2 pt-8">
 					<p class="font-bold">Teams</p>
 					<div class="ms-[25%] h-0 w-[50%] rounded-full border-2 border-purple bg-purple"></div>
@@ -74,7 +72,7 @@
 				<button type="button" on:click={() => redirect(Pages.Teams)}>Teams</button>
 			{/if}
 
-			{#if current_page == Pages.Staff}
+			{#if $currentPage == Pages.Staff}
 				<div class="grid grid-rows-2 pt-8">
 					<p class="font-bold">Staff</p>
 					<div class="ms-[25%] h-0 w-[50%] rounded-full border-2 border-purple bg-purple"></div>
@@ -83,7 +81,7 @@
 				<button type="button" on:click={() => redirect(Pages.Staff)}>Staff</button>
 			{/if}
 
-			{#if current_page == Pages.MapPools}
+			{#if $currentPage == Pages.MapPools}
 				<div class="grid grid-rows-2 pt-8">
 					<p class="font-bold">Map Pools</p>
 					<div class="ms-[25%] h-0 w-[50%] rounded-full border-2 border-purple bg-purple"></div>
@@ -100,7 +98,7 @@
 				on:click={() => window.open('https://discord.gg/vyTc6TVr66', '_blank')}
 				title="Join our Discord!"
 			>
-				<img src="/Discord_Icon.png" alt="Discord Logo" />
+				<img src="/discord-mark-white.svg" alt="Discord Logo" class="h-[35px]" />
 			</button>
 		</div>
 	</div>
