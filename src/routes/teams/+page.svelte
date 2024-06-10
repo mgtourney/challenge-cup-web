@@ -25,7 +25,7 @@
                             <img src={player.avatar} alt="Player Avatar" class="h-[52px] rounded-2xl" />
                             <div class="flex flex-col">
                                 <p class="text-2xl font-semibold ms-4">{player.name}</p>
-                                <p class="text-xl ms-4">{player.captian? "Captian" : "Player"}</p>
+                                <p class="text-xl ms-4">{player.captian? "Captain" : "Player"}</p>
                             </div>
                         </div>
                     {/each}

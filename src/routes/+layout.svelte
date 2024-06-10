@@ -37,7 +37,9 @@
 	<!-- Navbar -->
 	<div class="flex w-full flex-row bg-light-grey">
 		<div class="flex justify-start py-8 ps-8">
-			<img src="/logo_and_text.png" alt="BSCC Logo" class="h-[75px]" />
+			<button type="button" on:click={() => redirect(Pages.Home)}>
+				<img src="/logo_and_text.png" alt="BSCC Logo" class="h-[75px]" />
+			</button>
 		</div>
 
 		<div class="flex-grow"></div>
@@ -104,21 +106,21 @@
 	</div>
 	<slot />
 	<!-- Footer -->
-	<div class="grid h-full w-full flex-grow grid-cols-5 items-center bg-light-grey py-8 pe-4">
-		<div class="mx-16 text-start text-2xl">
+	<div class="flex flex-row h-full w-full items-center bg-light-grey py-8 pe-4">
+		<div class="mx-16 text-start text-2xl w-fit">
 			<img src="/logo_and_text.png" alt="BSCC Logo" class="h-[75px]" />
 			<p class="ms-4">© Copyright 2024</p>
 			<p class="ms-4">All rights reserved</p>
 		</div>
+		<!-- svelte-ignore a11y-missing-attribute -->
 		<div class="grid h-fit grid-cols-1 gap-2">
-			<p>Home</p>
-			<p>Rules</p>
-			<p>Teams</p>
-			<p>Staff</p>
-			<p>Map Pools</p>
+			<a role="button" tabindex=0 on:click={() => redirect(Pages.Home)} on:keydown={(e) => e.key === 'Enter' && redirect(Pages.Home)}>Home</a>
+			<a role="button" tabindex=0 on:click={() => redirect(Pages.Rules)} on:keydown={(e) => e.key === 'Enter' && redirect(Pages.Rules)}>Rules</a>
+			<a role="button" tabindex=0 on:click={() => redirect(Pages.Teams)} on:keydown={(e) => e.key === 'Enter' && redirect(Pages.Teams)}>Teams</a>
+			<a role="button" tabindex=0 on:click={() => redirect(Pages.Staff)} on:keydown={(e) => e.key === 'Enter' && redirect(Pages.Staff)}>Staff</a>
+			<a role="button" tabindex=0 on:click={() => redirect(Pages.MapPools)} on:keydown={(e) => e.key === 'Enter' && redirect(Pages.MapPools)}>Map Pools</a>
 		</div>
-		<div class="col-span-2"></div>
-		<div class="justfiy-end flex size-full items-end text-end">
+		<div class="justfiy-end flex flex-grow text-end justify-end h-[155px] items-end me-4">
 			<p>
 				Special thanks to <a class="underline" href="https://discord.gg/wEjMM5QZdK">Magnesium</a>
 				and <a class="underline" href="https://discord.gg/yaQUsTXbYR">Challenge Saber</a>
