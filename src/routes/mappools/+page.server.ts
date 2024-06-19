@@ -18,6 +18,9 @@ export async function load() {
                 diff: maps.diff,
             }).from(maps).where(eq(maps.id, id)).limit(1);
 
+            // add a random cool down to prevent rate limiting
+            await new Promise(resolve => setTimeout(resolve, Math.random() * 100));
+
             let res = await fetch(`https://api.beatsaver.com/maps/id/${map[0].hex}`);
             if (res.ok) {
                 let data = await res.json();

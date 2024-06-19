@@ -12,10 +12,10 @@
 	</div>
 
 	<div class="rounded-2xl bg-dark-grey flex-col py-4 mb-16">
-        {#each data.teams as team}
+        {#each data.teams as team, i}
             <div class="flex bg-grey flex-col mx-8 mt-4 rounded-2xl py-2">
                 <div class="flex flex-row items-center">
-                    <p class="text-6xl font-bold ms-4">*</p>
+                    <p class="text-6xl font-bold ms-4">i</p>
                     <img src={team.avatar} alt="Team avatar" class="h-[100px] rounded-2xl mx-4" />
                     <p class="text-4xl font-bold bg-purple rounded-2xl py-2 px-4 text-center">{team.name}</p>
                 </div>
