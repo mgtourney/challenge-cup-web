@@ -32,7 +32,6 @@
                 </div>
             </div>
         {/each}
-        <p class="mx-8 mt-2">Note: Seeds have been replaced with * as they have not been released yet.</p>
     </div>
 
 </div>
