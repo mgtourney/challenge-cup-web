@@ -26,6 +26,8 @@ export async function load() {
                 let data = await res.json();
                 return {name: data.metadata.songName, author: data.metadata.songAuthorName, icon: data.versions[data.versions.length - 1].coverURL, mapper: data.metadata.levelAuthorName, diff: map[0].diff, hex: map[0].hex};
             } else {
+                console.error(`Failed to fetch map ${map[0].hex}`);
+                console.log(await res.text());
                 return {name: "Unknown", author: "Unknown", mapper: "Unknown", icon: "https://placehold.co/400", diff: "Unknown", hex: map[0].hex};
             }
         });
