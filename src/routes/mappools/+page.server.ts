@@ -14,15 +14,18 @@ export async function load() {
         //random delay
         let delay = Math.floor(Math.random() * 300);
 
-        let our_maps: any[] = mappool.map_ids.map(id => {
-            let map: any = db.select({
+        let promise2 =  mappool.map_ids.map(async id => {
+            let map = db.select({
                 hex: maps.hex,
                 diff: maps.diff,
             }).from(maps).where(eq(maps.id, id)).limit(1);
-            return map[0];
+            return await map;
         })
+        
+        let our_maps = await Promise.all(promise2);
 
-        let comma_separated = our_maps.map(map => map.hex).join(',');
+        let comma_separated = our_maps.map(map => map[0].hex).join(",");
+        // console.log(comma_separated);
 
         let map_data = await fetch(`https://api.beatsaver.com/maps/ids/${comma_separated}`);
 
@@ -33,10 +36,13 @@ export async function load() {
         }
 
         let map_json = await map_data.json();
+        // console.log(map_json);
 
-        let promise = map_json.docs.map(async (data: any, index: number) => {
-            return {name: data.metadata.songName, author: data.metadata.songAuthorName, icon: data.versions[data.versions.length - 1].coverURL, mapper: data.metadata.levelAuthorName, diff: our_maps[index].diff, hex: our_maps[index].hex};
-        });
+        let promise = our_maps.map(async map => {
+            let hex = map[0].hex;
+            // console.log(map_json[hex].metadata.songName);
+            return {name: map_json[hex].metadata.songName, author: map_json[hex].metadata.songAuthorName, icon: map_json[hex].versions[0].coverURL, mapper: map_json[hex].metadata.levelAuthorName, diff: map[0].diff, hex: hex};
+        })
 
         let mp = <{name: string, description: string, bplist: string, maps: {name: string, author: string, icon: string, mapper: string, diff: string, hex: string}[]}><unknown>mappool;
 
