@@ -36,6 +36,9 @@ export async function load() {
 
         t.players = await Promise.all(promise);
 
+        // put the captian first
+        t.players.sort((a, b) => a.captian || b.captian ? 0 : -1);
+
         return t;
     });
 
