@@ -48,5 +48,11 @@
             <p>- If a player <b class="font-bold">disconnects for any reason</b> during the match, they will <b class="font-bold">have a limit of 10 minutes to reconnect.</b> The team will be <b class="font-bold">forced to play without said player if they cannot reconnect in time.</b> A team with <b class="font-bold">less than 2 players forfeits the match.</b></p>
             <p>- Teams have a <b class="font-bold">10 minute grace period</b> to be present and have a <b class="font-bold">minimum of 2 players ready to play the match.</b> A team that isn’t able to play within the grace period will <b class="font-bold">forfeit the match.</b></p>
             <p>- Each team is <b class="font-bold">allowed one replay per match at the Captain’s discretion.</b> A replay cannot be called on a map that has already been replayed. <b class="font-bold">All replay calls are final and may not be taken back.</b></p>
-    </div>
+        <h1 class="text-4xl font-bold my-4">Picks and Bans</h1>
+            <h1 class="text-3xl font-bold my-4">Coinflip / Roll</h1>
+            <p>A roll will <b class="font-bold">determine Team 1 and Team 2.</b> Each Team Captain will use the <b class="font-bold">roll d100 command</b> and the highest score will get to <b class="font-bold">decide which Team they pick to be.</b></p>
+            <div class="flex flex-row gap-4 py-[1rem] items-center justify-center">
+                <img src="Picks & Bans.png" alt="Picks and Bans Graphic" class="h-[1000px]" />
+            </div>
+        </div>
 </div>
