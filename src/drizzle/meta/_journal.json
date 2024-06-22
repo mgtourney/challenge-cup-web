@@ -8,6 +8,13 @@
       "when": 1717749333678,
       "tag": "0000_freezing_red_hulk",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1719016717800,
+      "tag": "0001_majestic_the_fallen",
+      "breakpoints": true
     }
   ]
 }

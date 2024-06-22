@@ -2,12 +2,28 @@ import { db } from "$lib/server/db";
 import { mappools, maps } from "$lib/server/schema";
 import { eq } from "drizzle-orm";
 
+interface Mappool {
+    name: string;
+    description: string;
+    bplist: string;
+    sort_id: number;
+    maps: {
+        name: string
+        author: string
+        icon: string
+        mapper: string
+        diff: string
+        hex: string
+    }[]
+}
+
 export async function load() {
     let m = await db.select({
         name: mappools.name,
         description: mappools.description,
         map_ids: mappools.maps,
         bplist: mappools.bplist,
+        sort_id: mappools.sort_id,
     }).from(mappools);
 
     let promise = m.map(async (mappool) => {
@@ -25,7 +41,6 @@ export async function load() {
         let our_maps = await Promise.all(promise2);
 
         let comma_separated = our_maps.map(map => map[0].hex).join(",");
-        // console.log(comma_separated);
 
         let map_data = await fetch(`https://api.beatsaver.com/maps/ids/${comma_separated}`);
 
@@ -44,7 +59,7 @@ export async function load() {
             return {name: map_json[hex].metadata.songName, author: map_json[hex].metadata.songAuthorName, icon: map_json[hex].versions[0].coverURL, mapper: map_json[hex].metadata.levelAuthorName, diff: map[0].diff, hex: hex};
         })
 
-        let mp = <{name: string, description: string, bplist: string, maps: {name: string, author: string, icon: string, mapper: string, diff: string, hex: string}[]}><unknown>mappool;
+        let mp = <Mappool><unknown>mappool;
 
         mp.maps = await Promise.all(promise);
 
@@ -52,6 +67,6 @@ export async function load() {
     });
 
     return {
-        mappools: await Promise.all(promise)
+        mappools: (await Promise.all(promise)).sort((a, b) => a.sort_id - b.sort_id)
     }
 }

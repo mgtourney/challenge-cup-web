@@ -12,6 +12,7 @@ export const users = pgTable("users", {
 
 export const teams = pgTable("teams", {
     id: uuid('id').primaryKey().defaultRandom(),
+    sort_id: integer('sort_id').notNull().default(0),
     name: varchar('name').notNull(),
     avatar: varchar('avatar').notNull(),
 });
@@ -25,6 +26,7 @@ export const players = pgTable("players", {
 
 export const mappools = pgTable("mappools", {
     id: uuid('id').primaryKey().defaultRandom(),
+    sort_id: integer('sort_id').notNull().default(0),
     name: varchar('name').notNull(),
     description: varchar('description').notNull(),
     bplist: text('bplist').notNull(),

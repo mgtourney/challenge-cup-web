@@ -1,7 +1,19 @@
 import { db } from '$lib/server/db.js'
 import { players, teams } from '$lib/server/schema'
-import { eq } from 'drizzle-orm'
-import { quadInOut, quartIn } from 'svelte/easing';
+
+interface Team {
+    id: string;
+    name: string;
+    avatar: string;
+    sort_id: number;
+    players: {
+        game_id: string;
+        avatar: string;
+        name: string;
+        captian: boolean;
+    }[];
+
+}
 
 export async function load() {
     const pt = await db.select({
@@ -14,10 +26,11 @@ export async function load() {
         id: teams.id,
         name: teams.name,
         avatar: teams.avatar,
+        sort_id: teams.sort_id,
     }).from(teams);
 
     let promise = t.map(async (team) => {
-        let t = <{id: string, name: string, avatar: string, players: {game_id: string, avatar: string, name: string, captian: boolean}[]}>team;
+        let t = <Team>team;
         let promise = pt.filter(player => player.team === team.id).map(async (player) => {
             let res = await fetch(`https://api.beatleader.xyz/player/${player.game_id}`);
             if (res.ok) {
@@ -43,6 +56,6 @@ export async function load() {
     });
 
     return {
-        teams: await Promise.all(promise)
+        teams: (await Promise.all(promise)).sort((a, b) => a.sort_id - b.sort_id)
     }
 }
