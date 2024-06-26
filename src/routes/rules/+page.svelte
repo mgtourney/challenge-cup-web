@@ -42,7 +42,7 @@
             <p>- The tiebreaker is <b class="font-bold">predetermined.</b></p>
             <p>- Scores are determined by <b class="font-bold">combined misses.</b> In the case of a <b class="font-bold">tie, they are determined by score.</b></p>
             <p>- <b class="font-bold">Each team</b> is allowed a <b class="font-bold">warmup map of a limited time of 3 minutes.</b> Each team <b class="font-bold">may opt out</b> of playing the warmup map. All warmup maps <b class="font-bold">must be sent to the coordinator by the team captain and respect Twitch’s Terms of Services.</b></p>
-            <p>- There will be a max <b class="font-bold">5 minute break allowed following each map,</b> replays count as a separate map.</p>
+            <p>- There will be a max <b class="font-bold">3 minute break allowed following each map,</b> replays count as a separate map.</p>
             <p>- Team icons must be <b class="font-bold">tasteful.</b></p>
             <p>- Players <b class="font-bold">may be subbed out between maps, including replays.</b></p>
             <p>- If a player <b class="font-bold">disconnects for any reason</b> during the match, they will <b class="font-bold">have a limit of 10 minutes to reconnect.</b> The team will be <b class="font-bold">forced to play without said player if they cannot reconnect in time.</b> A team with <b class="font-bold">less than 2 players forfeits the match.</b></p>
