@@ -49,11 +49,11 @@
             <p>- Teams have a <b class="font-bold">10 minute grace period</b> to be present and have a <b class="font-bold">minimum of 2 players ready to play the match.</b> A team that isn’t able to play within the grace period will <b class="font-bold">forfeit the match.</b></p>
             <p>- Each team is <b class="font-bold">allowed one replay per match at the Captain’s discretion.</b> A replay cannot be called on a map that has already been replayed. <b class="font-bold">All replay calls are final and may not be taken back.</b></p>
         <h1 class="text-4xl font-bold my-4">Cheesing Rules</h1>
-            <p>All forms of "cheesing" are <b class="font-bold">not allowed</b> in this tournament.</p>
-            <p>The most common forms of "cheesing" are listed below. Being caught "cheesing" during this tournament <b class="font-bold">may result in a warning and/or penalities.</b></p>
+            <p>Most forms of "cheesing" are <b class="font-bold">not allowed</b> in this tournament.</p>
+            <p>"Cheesing" on maps marked as "Shitpost" on the Map Pools tab of the Public Sheet <b class="font-bold">is allowed</b> in this tournament.</p>
+            <p>The most common forms of "cheesing" are listed below. Being caught "cheesing" on a map that is not shitpost during this tournament <b class="font-bold">may result in a warning and/or a map loss.</b></p>
             <p><b class="font-bold">- NJS Cheesing</b></p>
             <p><b class="font-bold">- Hilt Cheesing</b></p>
-            <p><b class="font-bold">- Pizza Cheesing</b></p>
             <p><b class="font-bold">- Windshield Wiping</b></p>
             <p><b class="font-bold">- Any other form of cheesing not listed below</b></p>
         <h1 class="text-4xl font-bold my-4">Picks and Bans</h1>
