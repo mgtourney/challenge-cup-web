@@ -7,8 +7,8 @@
 		<img src="/logo.png" alt="BSCC Logo" class="h-[350px]" />
 	</div>
 	<div class="flex flex-col">
-		<p class="text-7xl">Welcome to</p>
-		<p class="text-8xl font-bold">Challenge Cup</p>
+		<p class="text-7xl">The winners of BSCC 2024 are</p>
+		<p class="text-8xl font-bold">Team Gang!</p>
 		<button class="mt-4 size-fit rounded-full bg-purple px-8 py-4 text-start text-3xl"
 			on:click={() => window.open('https://discord.gg/vyTc6TVr66', '_blank')}
 			>Join our Discord</button
